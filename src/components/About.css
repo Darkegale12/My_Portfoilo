@@ -1,0 +1,26 @@
+.about {
+    background-color: var(--bg-primary);
+}
+
+.about-content {
+    max-width: var(--content-width);
+    margin: 0 auto;
+}
+
+.about-text {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-lg);
+}
+
+.about-text strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.about-text.about-cta {
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0;
+}
