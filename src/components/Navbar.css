@@ -36,6 +36,29 @@
     color: var(--accent);
 }
 
+/* Metallic paint logo variant */
+.navbar-logo--metallic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+    background: transparent;
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo--metallic:hover {
+    transform: scale(1.08);
+}
+
+.navbar-logo--metallic canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
 .navbar-links {
     display: flex;
     align-items: center;

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Moon, Sun, Menu, X } from 'lucide-react';
+import MetallicPaintText from './metallicPainHeader';
 import './Navbar.css';
 
 const navLinks = [
@@ -44,8 +45,22 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
         >
             <div className="container navbar-container">
-                <a href="#hero" className="navbar-logo">
-                    VM
+                <a href="#hero" className="navbar-logo navbar-logo--metallic">
+                    <MetallicPaintText
+                        primaryText="VM"
+                        textCanvasWidth={200}
+                        textCanvasHeight={200}
+                        speed={0.25}
+                        brightness={1.2}
+                        contrast={1.5}
+                        lightColor="#ffffff"
+                        darkColor="#1a1a2e"
+                        tintColor="#e0e0e0"
+                        scale={4}
+                        liquid={0.05}
+                        blur={0.012}
+                        refraction={0.012}
+                    />
                 </a>
 
                 <div className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>

@@ -8,6 +8,7 @@ import GitHubGrid from './components/GitHubGrid';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import BlurScrollSection from './components/blurScroll';
 
 function App() {
   return (
@@ -15,14 +16,28 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Skills />
-        <Projects />
-        <Experience />
-        <GitHubGrid />
-        <Certifications />
-        <Contact />
+        <BlurScrollSection>
+          <Skills />
+        </BlurScrollSection>
+        <BlurScrollSection>
+          <Projects />
+        </BlurScrollSection>
+        <BlurScrollSection>
+          <Experience />
+        </BlurScrollSection>
+        <BlurScrollSection>
+          <GitHubGrid />
+        </BlurScrollSection>
+        <BlurScrollSection>
+          <Certifications />
+        </BlurScrollSection>
+        <BlurScrollSection>
+          <Contact />
+        </BlurScrollSection>
       </main>
-      <Footer />
+      <BlurScrollSection>
+        <Footer />
+      </BlurScrollSection>
     </>
   );
 }
