@@ -1,0 +1,131 @@
+.earth-hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.earth-horizon-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 20;
+    pointer-events: none;
+}
+
+/* Starry background */
+.stars-layer {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    z-index: 1;
+    box-shadow: 
+        10vw 20vh #fff, 30vw 15vh #fff, 50vw 10vh #fff, 80vw 25vh #fff, 90vw 5vh #fff,
+        15vw 40vh #fff, 35vw 35vh #fff, 55vw 50vh #fff, 75vw 45vh #fff, 95vw 30vh #fff,
+        5vw 60vh #fff, 25vw 70vh #fff, 45vw 65vh #fff, 65vw 80vh #fff, 85vw 55vh #fff,
+        18vw 85vh #fff, 38vw 90vh #fff, 58vw 85vh #fff, 78vw 95vh #fff, 88vw 75vh #fff,
+        12vw 12vh rgba(255,255,255,0.6), 42vw 22vh rgba(255,255,255,0.6), 
+        62vw 12vh rgba(255,255,255,0.6), 82vw 32vh rgba(255,255,255,0.6);
+}
+
+.earth-hero-title {
+    position: absolute;
+    /* Move text up so it's clearly above the planet initially */
+    top: 30%; 
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+    font-size: 11.5vw; 
+    font-weight: 900;
+    margin: 0;
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    z-index: 10;
+    background: linear-gradient(180deg, #ffffff 0%, #777777 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.earth-horizon-container {
+    position: absolute;
+    /* Perfect spherical curve using exact aspect-ratio */
+    top: 45%; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    max-width: 900px;
+    aspect-ratio: 1 / 1;
+    /* z-index managed by wrapper now */
+    border-radius: 50%;
+    overflow: hidden;
+    /* Sharp glowing reddish rim matching the realistic reference */
+    box-shadow: 0 -2px 10px rgba(255, 120, 50, 0.8), inset 0 5px 25px rgba(255, 60, 0, 0.6), inset 0 -20px 100px #000;
+}
+
+.earth-texture {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* Pure CSS Hyper-realistic Mars, guarantees NO Earth texture! */
+    background: radial-gradient(circle at 50% 10%, #c44d28 0%, #852d13 25%, #421102 50%, #0a0200 75%, #000 100%);
+    z-index: 19;
+}
+
+.earth-fade-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* Fades from transparent at the top edge to pitch black around the vertical center of the sphere */
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 30%, #000 50%, #000 100%);
+    z-index: 21;
+    pointer-events: none;
+}
+
+.earth-hero-me {
+    position: absolute;
+    bottom: -28vh; /* Overlap nicely into the next section */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30; /* Above the planet wrapper */
+    pointer-events: none;
+}
+
+.earth-hero-me img {
+    height: 65vh; /* Generous size for the hero photo */
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 -10px 20px rgba(0,0,0,0.5));
+}
+
+.sun-flare-minimal {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 40px;
+    background: radial-gradient(ellipse at center, rgba(255,200,100,0.9) 0%, rgba(255,60,0,0.5) 40%, transparent 70%);
+    filter: blur(8px);
+    z-index: 22;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .earth-hero-title {
+        font-size: 14vw; 
+        top: 35%;
+    }
+    .earth-horizon-container {
+        width: 150vw;
+        top: 50%; 
+    }
+}

@@ -1,72 +1,134 @@
-.contact {
+.contact-section {
     background-color: var(--bg-primary);
-    text-align: center;
+    padding: var(--space-xl) var(--space-lg) var(--space-3xl) var(--space-lg);
+    display: flex;
+    justify-content: center;
 }
 
-.contact-content {
-    max-width: 600px;
-    margin: 0 auto;
+.contact-box {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 400px; /* Reduced height to perfectly match the sleek banner shape in reference */
+    background-color: #050505; /* Deep dark background */
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.constellation-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none; /* Let clicks pass through to buttons */
+}
+
+.contact-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-2xl);
+}
+
+/* Central Area */
+.contact-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: var(--space-xl);
 }
 
 .contact-title {
-    font-size: var(--font-size-section);
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: var(--space-lg);
-    letter-spacing: var(--letter-spacing-tight);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: -0.02em;
+    line-height: var(--line-height-tight);
 }
 
-.contact-description {
-    font-size: var(--font-size-lg);
-    color: var(--text-secondary);
-    line-height: var(--line-height-relaxed);
-    margin-bottom: var(--space-2xl);
-}
-
-.contact-links {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-    align-items: center;
-}
-
-.contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-md);
-    padding: var(--space-md) var(--space-xl);
-    font-size: var(--font-size-base);
+.contact-btn {
+    background-color: #007AFF; /* Vibrant blue like in reference */
+    color: white;
+    padding: 12px 32px;
+    border-radius: 999px; /* Pill shape */
     font-weight: 500;
-    color: var(--text-primary);
-    background-color: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    transition: all var(--transition-base);
-    min-width: 280px;
+    font-size: var(--font-size-base);
+    text-decoration: none;
+    transition: transform var(--transition-base), background-color var(--transition-fast);
 }
 
-.contact-link:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-    background-color: var(--accent-muted);
+.contact-btn:hover {
+    background-color: #0066d6;
+    transform: scale(1.05);
+    color: white;
+}
+
+/* Bottom Area */
+.contact-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.contact-email {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    font-family: monospace;
+    letter-spacing: 0.05em;
+}
+
+.contact-socials {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.social-icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    transition: all var(--transition-base);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
     transform: translateY(-2px);
 }
 
-.contact-link .link-arrow {
-    margin-left: auto;
-    opacity: 0;
-    transform: translateX(-4px);
-    transition: all var(--transition-fast);
-}
-
-.contact-link:hover .link-arrow {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-@media (max-width: 640px) {
-    .contact-link {
-        width: 100%;
-        min-width: auto;
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .contact-box {
+        height: 500px;
+    }
+    .contact-overlay {
+        padding: var(--space-xl);
+    }
+    .contact-title {
+        font-size: 2.2rem;
+    }
+    .contact-bottom {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: var(--space-xl);
     }
 }

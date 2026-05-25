@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import './Skills.css';
+import LogoLoop from './logoloop';
 
 // Using shields.io badges with devicon logos - same style as reference image
 const skillCategories = [
@@ -50,6 +51,21 @@ const skillCategories = [
     }
 ];
 
+// Real SVG logos from CDNs for the scrolling carousel
+const techLogos = [
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style={{ height: 44 }} />,
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" style={{ height: 44 }} />,
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" style={{ height: 44 }} />,
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" style={{ height: 44 }} />,
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style={{ height: 44 }} />,
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="Deep Learning" style={{ height: 44 }} />,
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="Neural Networks" style={{ height: 44 }} />,
+    <img src="https://cdn.simpleicons.org/langchain/1C3C3C" alt="LangChain" style={{ height: 44, filter: 'brightness(0) invert(1)' }} />,
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" style={{ height: 44 }} />,
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style={{ height: 44, filter: 'brightness(0) invert(1)' }} />,
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" style={{ height: 44, filter: 'brightness(0) invert(1)' }} />,
+];
+
 const Skills = () => {
     return (
         <section className="section skills" id="skills">
@@ -88,6 +104,17 @@ const Skills = () => {
                         </motion.div>
                     ))}
                 </div>
+
+                {/* Scrolling logo carousel */}
+                <motion.div
+                    className="logo-loop-wrapper"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                    <LogoLoop logos={techLogos} speed={60} gap={50} fadeOut={true} />
+                </motion.div>
             </div>
         </section>
     );

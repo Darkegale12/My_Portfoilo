@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap');
+
+/* ============================================================
+   LAPTOP SCROLL  –  Cinematic Opening Animation
+   ============================================================ */
+
+.laptop-scroll-section {
+  /* 600vh = ~55% animation + ~45% hold zone (≈ 270vh of sticky hold) */
+  height: 600vh;
+  background-color: #000;
+  position: relative;
+}
+
+.laptop-scroll-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* ── Canvas wrapper – scales laptop to 85% ── */
+.laptop-canvas-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.laptop-scroll-canvas {
+  display: block;
+  width: 85%;
+  height: 85%;
+  object-fit: cover;
+}
+
+/* ── Title overlay ── */
+.laptop-scroll-title {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: 'bisdak', 'Perandory', 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 500;
+  letter-spacing: normal;
+  color: #ffffff;
+  z-index: 20;
+  pointer-events: none;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  padding: 0 1rem;
+}
+
+/* ── Loading state ── */
+.laptop-scroll-loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+  z-index: 30;
+}
+
+.laptop-scroll-spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 4px solid #333;
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.laptop-scroll-loading-text {
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: #a1a1aa;
+  text-transform: uppercase;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   LAPTOP SCREEN OVERLAY  –  Hero content inside laptop display
+   ============================================================ */
+
+.laptop-screen-overlay {
+  position: absolute;
+  z-index: 15;
+  /* Hard clip — nothing escapes, including blur/glow */
+  overflow: hidden;
+  clip-path: inset(0);
+  border-radius: 3px;
+  pointer-events: none;
+  transition: opacity 0.1s ease;
+}
+
+/* Subtle screen glow / reflection */
+.laptop-screen-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(170deg, rgba(255,255,255,0.03) 0%, transparent 30%),
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(59,130,246,0.03) 0%, transparent 70%);
+  mix-blend-mode: screen;
+}
+
+/* Virtual Container Override for Mini Hero */
+.laptop-screen-virtual-container .hero {
+  min-height: 100% !important;
+  width: 100% !important;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .laptop-scroll-canvas {
+    width: 92%;
+    height: 92%;
+  }
+}
+
+@media (max-width: 480px) {
+  .laptop-scroll-canvas {
+    width: 96%;
+    height: 96%;
+  }
+}

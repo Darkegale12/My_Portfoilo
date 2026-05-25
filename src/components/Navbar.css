@@ -25,38 +25,24 @@
 }
 
 .navbar-logo {
-    font-size: var(--font-size-xl);
-    font-weight: 700;
-    color: var(--text-primary);
-    text-decoration: none;
-    letter-spacing: -0.02em;
-}
-
-.navbar-logo:hover {
-    color: var(--accent);
-}
-
-/* Metallic paint logo variant */
-.navbar-logo--metallic {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 52px;
-    height: 52px;
-    overflow: hidden;
-    border: none;
-    padding: 0;
-    background: transparent;
-    transition: transform 0.3s ease;
+    text-decoration: none;
 }
 
-.navbar-logo--metallic:hover {
-    transform: scale(1.08);
+.navbar-logo-img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border);
+    transition: transform var(--transition-base), border-color var(--transition-fast);
 }
 
-.navbar-logo--metallic canvas {
-    width: 100% !important;
-    height: 100% !important;
+.navbar-logo-img:hover {
+    transform: scale(1.05);
+    border-color: var(--accent);
 }
 
 .navbar-links {

@@ -1,15 +1,21 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, FileText } from 'lucide-react';
 import VariableProximity from './VariableProximity';
+import ProfileCard from './ProfileCard';
+import profilePic from './profilePic.jpeg';
 import './Hero.css';
 
-const Hero = () => {
+interface HeroProps {
+    id?: string;
+}
+
+const Hero = ({ id = "hero" }: HeroProps) => {
     const scrollToProjects = () => {
         document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
     };
 
     return (
-        <section className="hero" id="hero">
+        <section className="hero" id={id}>
             <div className="container hero-container">
                 <motion.div
                     className="hero-content"
@@ -83,7 +89,7 @@ const Hero = () => {
                             <ArrowDown size={16} />
                         </button>
                         <a
-                            href="/resume.pdf"
+                            href="/updating_resume.pdf"
                             className="btn btn-secondary"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -92,6 +98,27 @@ const Hero = () => {
                             Download Resume
                         </a>
                     </motion.div>
+                </motion.div>
+
+                <motion.div
+                    className="hero-profile-card"
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.5, duration: 0.8, ease: 'easeOut' }}
+                >
+                    <ProfileCard
+                        avatarUrl={profilePic}
+                        name="Vishwajeet More"
+                        title="Full-Stack Engineer"
+                        handle="vishwajeet"
+                        status="Available for work"
+                        contactText="Contact Me"
+                        showUserInfo={true}
+                        enableTilt={true}
+                        behindGlowEnabled={true}
+                        behindGlowColor="rgba(100,149,237,0.5)"
+                        onContactClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    />
                 </motion.div>
             </div>
         </section>

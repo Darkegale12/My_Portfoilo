@@ -3,34 +3,43 @@ import './Experience.css';
 
 const experiences = [
     {
-        role: 'Web Development Head',
-        organization: 'Google Developer Group on Campus - MMCOE',
-        period: '2024 - Present',
+        role: 'Software Development Engineer Intern (Remote)',
+        organization: 'Arsha Consultancy LLC, USA',
+        period: 'Jan 2026 – Present',
         bullets: [
-            'Leading web development initiatives and mentoring 50+ student developers',
-            'Organized and led hackathons with 200+ participants, driving innovation in the tech community'
+            'Developing dynamic dashboards and interactive mapping solutions for real-world applications.',
+            'Currently contributing to the PCMC project, focusing on scalable web solutions and data-driven visualization systems deployed in production environments.'
         ],
-        tech: 'React, TypeScript, Spring Boot, Firebase'
+        tech: 'Web Solutions, Data Visualization, Mapping'
     },
     {
-        role: 'Open Source Contributor',
-        organization: 'GirlScript Summer of Code (GSSoC)',
-        period: '2024',
+        role: 'Web Development Head (On Campus)',
+        organization: 'Google Developers Group — MMCOE',
+        period: '2025 – Present',
         bullets: [
-            'Contributed to multiple open-source projects, improving documentation and adding features',
-            'Collaborated with maintainers globally, following best practices in code review and Git workflows'
+            'Leading web development initiatives and organizing technical activities within the Google Developers Group campus chapter.'
         ],
-        tech: 'Java, Python, JavaScript, Git'
+        tech: 'Web Development, Leadership'
     },
     {
-        role: 'Hackathon Leader & Winner',
-        organization: 'Multiple National Hackathons',
-        period: '2023 - Present',
+        role: 'Backend Intern',
+        organization: 'SPCL',
+        period: 'Aug 2025 – Oct 2025',
         bullets: [
-            'Led teams to victory in SIH internal rounds and multiple inter-college hackathons',
-            'Developed full-stack solutions under 24-48 hour constraints with production-ready code'
+            'Developed backend modules using Core Java and collaborated with the engineering team on ERP system enhancements.',
+            'Gained practical exposure to enterprise backend architecture, code integration, and real-world deployment workflows.'
         ],
-        tech: 'Spring Boot, React, MySQL, Docker'
+        tech: 'Core Java, Enterprise Architecture, ERP Systems'
+    },
+    {
+        role: 'GirlScript Summer of Code Contributor',
+        organization: 'Open Source Connect',
+        period: '2025',
+        bullets: [
+            'Contributed to open-source repositories while learning collaborative development workflows using Git and GitHub.',
+            'Implemented Firebase Authentication and explored GitHub Actions for automated CI/CD workflows.'
+        ],
+        tech: 'Git, GitHub Actions, Firebase, CI/CD'
     }
 ];
 

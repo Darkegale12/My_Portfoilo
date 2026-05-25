@@ -4,6 +4,12 @@
    =================================== */
 
 /* CSS Custom Properties */
+@font-face {
+  font-family: 'bisdak';
+  src: url('./bisdak/Bisdak.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   /* Colors - Dark Mode (Default) */
   --bg-primary: #0a0a0a;
@@ -113,7 +119,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -187,10 +192,12 @@ a:hover {
 }
 
 .section-title {
+  font-family: 'bisdak', var(--font-family);
   font-size: var(--font-size-section);
   font-weight: 700;
   margin-bottom: var(--space-2xl);
-  letter-spacing: var(--letter-spacing-tight);
+  letter-spacing: normal;
+  text-transform: uppercase;
 }
 
 .text-gradient {

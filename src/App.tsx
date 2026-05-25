@@ -1,21 +1,32 @@
 import './index.css';
 import Navbar from './components/Navbar';
+import LaptopScroll from './components/LaptopScroll';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
-import GitHubGrid from './components/GitHubGrid';
+
 import Certifications from './components/Certifications';
+import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BlurScrollSection from './components/blurScroll';
+import ClickSpark from './components/clickclick';
 
 function App() {
   return (
-    <>
+    <ClickSpark
+      sparkColor="#6366f1"
+      sparkSize={12}
+      sparkRadius={20}
+      sparkCount={10}
+      duration={500}
+      easing="ease-out"
+      extraScale={1.2}
+    >
       <Navbar />
       <main>
-        <Hero />
+        <LaptopScroll />
         <BlurScrollSection>
           <Skills />
         </BlurScrollSection>
@@ -25,11 +36,12 @@ function App() {
         <BlurScrollSection>
           <Experience />
         </BlurScrollSection>
-        <BlurScrollSection>
-          <GitHubGrid />
-        </BlurScrollSection>
+
         <BlurScrollSection>
           <Certifications />
+        </BlurScrollSection>
+        <BlurScrollSection>
+          <Gallery />
         </BlurScrollSection>
         <BlurScrollSection>
           <Contact />
@@ -38,8 +50,9 @@ function App() {
       <BlurScrollSection>
         <Footer />
       </BlurScrollSection>
-    </>
+    </ClickSpark>
   );
 }
 
 export default App;
+

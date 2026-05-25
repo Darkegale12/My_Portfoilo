@@ -1,0 +1,86 @@
+.gallery-section {
+    background-color: var(--bg-primary);
+    overflow: hidden; /* Hide horizontal scrollbar */
+    padding-bottom: var(--space-3xl);
+}
+
+.gallery-marquee-container {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.gallery-marquee {
+    display: flex;
+    gap: var(--space-lg);
+    /* Set width to fit total width of all images */
+    width: max-content;
+    /* Move left continuously */
+    animation: marquee 30s linear infinite;
+    padding: 0 var(--space-lg);
+}
+
+/* Hovering over the marquee container doesn't pause it based on instructions 
+   ("scrolling animation should continue smoothly even during hover") */
+
+.gallery-item-wrapper {
+    flex-shrink: 0;
+    width: 400px;
+    height: 250px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 400ms ease;
+}
+
+/* Zoom effect on hover */
+.gallery-item-wrapper:hover .gallery-image {
+    transform: scale(1.08); /* slight enlarge */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move exactly half the content width left to loop seamlessly */
+        transform: translateX(calc(-50% - (var(--space-lg) / 2)));
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .gallery-item-wrapper {
+        width: 320px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-item-wrapper {
+        width: 280px;
+        height: 180px;
+    }
+    .gallery-marquee {
+        animation-duration: 20s;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item-wrapper {
+        width: 240px;
+        height: 160px;
+    }
+}

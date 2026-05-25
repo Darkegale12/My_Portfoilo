@@ -1,0 +1,146 @@
+/* ===================================
+   COSMIC HERO SECTION
+   Cinematic planet hero with scroll parallax
+   =================================== */
+
+.cosmic-hero-section {
+    position: relative;
+    width: 100%;
+    height: 200vh;
+    background: #000;
+    overflow: visible;
+}
+
+.cosmic-hero-sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Canvas - renders planet, rings, particles, text, stars */
+.cosmic-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+/* Ambient glow overlay for extra atmosphere */
+.cosmic-glow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse 60% 50% at 50% 50%,
+        rgba(255, 100, 40, 0.06) 0%,
+        rgba(200, 50, 20, 0.03) 40%,
+        transparent 70%
+    );
+}
+
+/* Hero image - scroll reveal */
+.cosmic-hero-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+.cosmic-hero-image img {
+    height: 65vh;
+    width: auto;
+    max-width: 90vw;
+    object-fit: contain;
+    filter: drop-shadow(0 -15px 40px rgba(0, 0, 0, 0.9))
+            drop-shadow(0 -5px 20px rgba(255, 100, 40, 0.15));
+}
+
+/* Bottom fade to blend into next section */
+.cosmic-bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 4;
+    background: linear-gradient(to bottom, transparent, #0a0a0a);
+    pointer-events: none;
+}
+
+/* Scroll indicator */
+.cosmic-scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.5;
+    animation: cosmicScrollPulse 2.5s ease-in-out infinite;
+}
+
+.cosmic-scroll-hint span {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.cosmic-scroll-line {
+    width: 1px;
+    height: 30px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent);
+}
+
+@keyframes cosmicScrollPulse {
+    0%, 100% { opacity: 0.3; transform: translateX(-50%) translateY(0); }
+    50% { opacity: 0.6; transform: translateX(-50%) translateY(5px); }
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1024px) {
+    .cosmic-hero-image img {
+        height: 55vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .cosmic-hero-section {
+        height: 180vh;
+    }
+
+    .cosmic-hero-image img {
+        height: 45vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .cosmic-hero-section {
+        height: 160vh;
+    }
+
+    .cosmic-hero-image img {
+        height: 38vh;
+    }
+}
