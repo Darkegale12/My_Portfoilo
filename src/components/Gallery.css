@@ -20,12 +20,14 @@
     /* Set width to fit total width of all images */
     width: max-content;
     /* Move left continuously */
-    animation: marquee 30s linear infinite;
+    animation: marquee 60s linear infinite;
     padding: 0 var(--space-lg);
 }
 
-/* Hovering over the marquee container doesn't pause it based on instructions 
-   ("scrolling animation should continue smoothly even during hover") */
+/* Pause animation when user hovers over the images */
+.gallery-marquee:hover {
+    animation-play-state: paused;
+}
 
 .gallery-item-wrapper {
     flex-shrink: 0;
@@ -74,7 +76,7 @@
         height: 180px;
     }
     .gallery-marquee {
-        animation-duration: 20s;
+        animation-duration: 40s;
     }
 }
 

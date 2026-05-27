@@ -58,7 +58,11 @@ const Hero = ({ id = "hero" }: HeroProps) => {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4 }}
                     >
-                        Building scalable backend systems, AI models, and AI agents for production-grade architectures.
+                        <img 
+                            src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=500&duration=2000&width=800&lines=AI+%26+ML+Explorer;Full-Stack+Developer;Building+Intelligent+%26+Scalable+Solutions;Always+Learning+New+Tech" 
+                            alt="Typing Effect" 
+                            style={{ maxWidth: '100%', height: 'auto' }} 
+                        />
                     </motion.p>
 
                     <motion.div

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import eagleLogo from './darkkeagle.png';
 import './Navbar.css';
 
@@ -14,7 +14,6 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-    const [isDark, setIsDark] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -28,10 +27,8 @@ const Navbar = () => {
     }, []);
 
     useEffect(() => {
-        document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-    }, [isDark]);
-
-    const toggleTheme = () => setIsDark(!isDark);
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }, []);
     const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
     const handleNavClick = () => {
@@ -64,14 +61,6 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar-actions">
-                    <button
-                        className="theme-toggle"
-                        onClick={toggleTheme}
-                        aria-label="Toggle theme"
-                    >
-                        {isDark ? <Sun size={18} /> : <Moon size={18} />}
-                    </button>
-
                     <button
                         className="mobile-menu-toggle"
                         onClick={toggleMobileMenu}

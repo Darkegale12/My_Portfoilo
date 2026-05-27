@@ -1,16 +1,39 @@
 import { motion } from 'framer-motion';
 import './Gallery.css';
 
+// Import local images from src/galeryy
+import img1 from '../galeryy/WhatsApp Image 2026-05-27 at 12.12.15 AM (1).jpeg';
+import img2 from '../galeryy/WhatsApp Image 2026-05-27 at 12.12.15 AM (2).jpeg';
+import img3 from '../galeryy/WhatsApp Image 2026-05-27 at 12.12.15 AM (3).jpeg';
+import img4 from '../galeryy/WhatsApp Image 2026-05-27 at 12.12.15 AM (4).jpeg';
+import img5 from '../galeryy/WhatsApp Image 2026-05-27 at 12.12.15 AM (5).jpeg';
+import img6 from '../galeryy/WhatsApp Image 2026-05-27 at 12.12.15 AM (6).jpeg';
+import img7 from '../galeryy/WhatsApp Image 2026-05-27 at 12.12.15 AM (7).jpeg';
+import img8 from '../galeryy/WhatsApp Image 2026-05-27 at 12.12.15 AM.jpeg';
+import img9 from '../galeryy/WhatsApp Image 2026-05-27 at 12.12.17 AM (1).jpeg';
+import img10 from '../galeryy/WhatsApp Image 2026-05-27 at 12.12.17 AM (2).jpeg';
+import img11 from '../galeryy/WhatsApp Image 2026-05-27 at 12.12.17 AM.jpeg';
+import img12 from '../galeryy/WhatsApp Image 2026-05-27 at 12.12.18 AM.jpeg';
+import img13 from '../galeryy/WhatsApp Image 2026-05-27 at 12.12.20 AM (1).jpeg';
+import img14 from '../galeryy/WhatsApp Image 2026-05-27 at 12.12.20 AM (2).jpeg';
+import img15 from '../galeryy/WhatsApp Image 2026-05-27 at 12.12.20 AM.jpeg';
+
 const galleryImages = [
-    'https://picsum.photos/600/400?random=1',
-    'https://picsum.photos/600/400?random=2',
-    'https://picsum.photos/600/400?random=3',
-    'https://picsum.photos/600/400?random=4',
-    'https://picsum.photos/600/400?random=5',
-    'https://picsum.photos/600/400?random=6',
-    'https://picsum.photos/600/400?random=7',
-    'https://picsum.photos/600/400?random=8',
-    'https://picsum.photos/600/400?random=9'
+    img1,
+    img9,
+    img2,
+    img13,
+    img3,
+    img10,
+    img4,
+    img14,
+    img5,
+    img11,
+    img6,
+    img12,
+    img7,
+    img15,
+    img8
 ];
 
 const Gallery = () => {
