@@ -22,12 +22,13 @@ const BlurScrollSection = ({
 
   const blur = useTransform(scrollYProgress, [0, 1], [blurStrength, 0]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
+  const filterBlur = useTransform(blur, (v) => `blur(${v}px)`);
 
   return (
     <div ref={ref}>
       <motion.div
         style={{
-          filter: useTransform(blur, (v) => `blur(${v}px)`),
+          filter: filterBlur,
           opacity,
           willChange: 'filter, opacity',
         }}

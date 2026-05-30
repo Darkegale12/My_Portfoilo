@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, useCallback } from 'react';
+import { useRef, useEffect, useState, useCallback, useMemo } from 'react';
 
 interface VariableProximityProps {
     label: string;
@@ -19,7 +19,7 @@ const VariableProximity = ({
 }: VariableProximityProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [letterStyles, setLetterStyles] = useState<string[]>([]);
-    const letters = label.split('');
+    const letters = useMemo(() => label.split(''), [label]);
 
     const calculateFalloff = useCallback((distance: number, maxDistance: number): number => {
         const normalized = Math.max(0, 1 - distance / maxDistance);

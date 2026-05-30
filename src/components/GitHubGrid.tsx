@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Github } from 'lucide-react';
 import FancyButton from './formoreButton';
 import './GitHubGrid.css';
 

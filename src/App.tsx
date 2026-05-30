@@ -1,10 +1,10 @@
 import './index.css';
 import Navbar from './components/Navbar';
 import LaptopScroll from './components/LaptopScroll';
-import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
+import About from './components/About';
 
 import Certifications from './components/Certifications';
 import Gallery from './components/Gallery';
@@ -35,6 +35,9 @@ function App() {
         </BlurScrollSection>
         <BlurScrollSection>
           <Experience />
+        </BlurScrollSection>
+        <BlurScrollSection>
+          <About />
         </BlurScrollSection>
 
         <BlurScrollSection>
