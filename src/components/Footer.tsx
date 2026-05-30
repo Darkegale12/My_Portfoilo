@@ -5,19 +5,19 @@ import './Footer.css';
 const Footer = () => {
     const currentYear = new Date().getFullYear();
     
-    const [visits, setVisits] = useState(58);
+    const [visits, setVisits] = useState(91);
     const [liveWatchers, setLiveWatchers] = useState(1);
 
     useEffect(() => {
         // Use local storage to simulate visits counter persisting and incrementing locally
         const storedVisits = localStorage.getItem('portfolio_visits');
         if (storedVisits) {
-            const nextVisits = Math.max(parseInt(storedVisits) + 1, 58);
+            const nextVisits = Math.max(parseInt(storedVisits) + 1, 91);
             setVisits(nextVisits);
             localStorage.setItem('portfolio_visits', nextVisits.toString());
         } else {
-            setVisits(59); // Start at 58 + 1 for current visit
-            localStorage.setItem('portfolio_visits', '59');
+            setVisits(92); // Start at 91 + 1 for current visit
+            localStorage.setItem('portfolio_visits', '92');
         }
 
         // Simulate live watchers fluctuating slightly
